@@ -1,6 +1,6 @@
 === EPT Empty Plugin Template ===
-Contributors: 1manfactory
-Donate link: http://1manfactory.com/
+Jürgen Schulze (1manfactory.com)
+Donate link: http://1manfactory.com/donate
 Tags: wordpress plugin, plugin, development, template, emtpy plugin template
 Requires at least: 2.8
 Tested up to: 3.0.5
