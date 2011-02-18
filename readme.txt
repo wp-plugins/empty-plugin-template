@@ -21,6 +21,8 @@ Considering all the advices given in http://codex.wordpress.org/Writing_a_Plugin
 * coding advices
 * security aspects (validating user inputs, nonces)
 * external third party stuff (Ajax, CSS, Javascript)
+* shortcode
+* Wordpress scheduler ("cronjob")
 
 == Installation ==
 
