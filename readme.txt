@@ -1,18 +1,20 @@
 === EPT Empty Plugin Template ===
 Jürgen Schulze (1manfactory.com)
 Donate link: http://1manfactory.com/donate
-Tags: wordpress plugin, plugin, development, template, emtpy plugin template
+Tags: wordpress plugin, plugin, development, template, emtpy plugin template, workshop, wordpress plugin workshop
 Requires at least: 2.8
 Tested up to: 3.0.5
 Stable tag: "trunk"
 
-An empty plugin template to start with, including the most basic necessary stuff
+An empty plugin template to start with, including the most basic necessary stuff. Take this as some kind of workshop.
 
 == Description ==
 
 STILL BETA Use this emtpy wordpress plugin template to build your own.
 
 Considering all the advices given in http://codex.wordpress.org/Writing_a_Plugin, http://codex.wordpress.org/Creating_Options_Pages and http://planetozh.com/blog/2009/09/top-10-most-common-coding-mistakes-in-wordpress-plugins/
+
+Every important point will have it's own page to explain.
 
 = Including: =
 * multi language ability
@@ -23,6 +25,8 @@ Considering all the advices given in http://codex.wordpress.org/Writing_a_Plugin
 * external third party stuff (Ajax, CSS, Javascript)
 * shortcode
 * Wordpress scheduler ("cronjob")
+* logfiles
+* capabilities
 
 == Installation ==
 
