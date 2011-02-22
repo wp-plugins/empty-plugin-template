@@ -72,6 +72,9 @@ Just do a normal upgrade.
 
 == Changelog ==
 
+= 0.1.1 (22.02.2011) =
+* logfile handling
+
 = 0.1 (17.02.2011) =
 * first version
 

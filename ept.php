@@ -26,15 +26,19 @@ License: GPL2
 */
 ?><?php
 
-// Version/Build of the plugin
+// some definition we will use
 define( 'EPT_PUGIN_NAME', 'EPT Empty Plugin Template');
 define( 'EPT_PLUGIN_DIRECTORY', 'empty-plugin-template');
 define( 'EPT_CURRENT_VERSION', '0.1' );
-define( 'EPT_CURRENT_BUILD', '1' );
-
-
+define( 'EPT_CURRENT_BUILD', '2' );
+define( 'EPT_LOGPATH', str_replace('\\', '/', WP_CONTENT_DIR).'/ept-logs/');
+define( 'EPT_DEBUG', false);		# never use debug mode on productive systems
 // i18n plugin domain for language files
 define( 'EMU2_I18N_DOMAIN', 'ept' );
+
+// how to handle log files, don't load them if you don't log
+require_once('ept_logfilehandling.php');
+
 // load language files
 function ept_set_lang_file() {
 	# set the language file
@@ -50,7 +54,7 @@ function ept_set_lang_file() {
 ept_set_lang_file();
 
 // create custom plugin settings menu
-add_action('admin_menu', 'ept_create_menu');
+add_action( 'admin_menu', 'ept_create_menu' );
 
 //call register settings function
 add_action( 'admin_init', 'ept_register_settings' );
@@ -68,12 +72,16 @@ function ept_activate() {
 function ept_deactivate() {
 	// needed for proper deletion of every option
 	delete_option('ept_option_3');
+	// delete log files and folder only if needed
+	if (function_exists('ept_deleteLogFolder')) ept_deleteLogFolder();
 }
 
 // uninstalling
 function ept_uninstall() {
 	# delete all data stored
 	delete_option('ept_option_3');
+	// delete log files and folder only if needed
+	if (function_exists('ept_deleteLogFolder')) ept_deleteLogFolder();
 }
 
 function ept_create_menu() {
@@ -101,5 +109,9 @@ function ept_register_settings() {
 	register_setting( 'ept-settings-group', 'option_etc' );
 }
 
-
+// check if debug is activated
+function ept_debug() {
+	# only run debug on localhost
+	if ($_SERVER["HTTP_HOST"]=="localhost" && defined('EPS_DEBUG') && EPS_DEBUG==true) return true;
+}
 ?>
