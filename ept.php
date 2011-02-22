@@ -3,7 +3,7 @@
 Plugin Name: EPT - Empty Plugin Template
 Plugin URI: http://1manfactory.com/ept
 Description: An empty plugin template to start with, including the most basic necessary stuff
-Version: 0.1
+Version: 0.1.1
 Author: Juergen Schulze, 1manfactory@gmail.com
 Author URI: http://1manfactory.com
 License: GPL2
@@ -29,7 +29,7 @@ License: GPL2
 // some definition we will use
 define( 'EPT_PUGIN_NAME', 'EPT Empty Plugin Template');
 define( 'EPT_PLUGIN_DIRECTORY', 'empty-plugin-template');
-define( 'EPT_CURRENT_VERSION', '0.1' );
+define( 'EPT_CURRENT_VERSION', '0.1.1' );
 define( 'EPT_CURRENT_BUILD', '2' );
 define( 'EPT_LOGPATH', str_replace('\\', '/', WP_CONTENT_DIR).'/ept-logs/');
 define( 'EPT_DEBUG', false);		# never use debug mode on productive systems
