@@ -16,8 +16,7 @@
     Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
 */
 
-// call admin notices block on top
-add_action('admin_notices', 'ept_check_create_log_folder');
+add_action( 'admin_notices', 'ept_check_create_log_folder' );
 
 // create log folder
 // return true if folder has been created or exists else false
@@ -59,11 +58,13 @@ function ept_deleteLogFolder() {
 
 // try to create log folder and print success or error on admin panel
 function ept_check_create_log_folder() {
-	ept_createLogFolder();
+	# check for folder
 	if (ept_check_folder_error()) {
-		print '<div id="message" class="error">'.__("Empty Plugin Template (EPT) Error: Can't write to log folder ", EMU2_I18N_DOMAIN).EPT_LOGPATH.__(" Permissions 777 needed.", EMU2_I18N_DOMAIN).'</div>';
-	} else {
-		print '<div id="message" class="updated">'.__("Empty Plugin Template (EPT): Log folder created: ", EMU2_I18N_DOMAIN).EPT_LOGPATH.'</div>';
+		if (!ept_createLogFolder()) {
+			print '<div id="message" class="error">'.__("Empty Plugin Template (EPT) Error: Can't write to log folder ", EMU2_I18N_DOMAIN).EPT_LOGPATH.__(" Permissions 777 needed.", EMU2_I18N_DOMAIN).'</div>';
+		} else {
+			print '<div id="message" class="updated">'.__("Empty Plugin Template (EPT): Log folder created: ", EMU2_I18N_DOMAIN).EPT_LOGPATH.'</div>';
+		}
 	}
 }
 

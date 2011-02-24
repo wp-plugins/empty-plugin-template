@@ -3,7 +3,7 @@
 Plugin Name: EPT - Empty Plugin Template
 Plugin URI: http://1manfactory.com/ept
 Description: An empty plugin template to start with, including the most basic necessary stuff
-Version: 0.1.1
+Version: 0.1.1.1
 Author: Juergen Schulze, 1manfactory@gmail.com
 Author URI: http://1manfactory.com
 License: GPL2
@@ -29,8 +29,8 @@ License: GPL2
 // some definition we will use
 define( 'EPT_PUGIN_NAME', 'EPT Empty Plugin Template');
 define( 'EPT_PLUGIN_DIRECTORY', 'empty-plugin-template');
-define( 'EPT_CURRENT_VERSION', '0.1.1' );
-define( 'EPT_CURRENT_BUILD', '2' );
+define( 'EPT_CURRENT_VERSION', '0.1.1.1' );
+define( 'EPT_CURRENT_BUILD', '3' );
 define( 'EPT_LOGPATH', str_replace('\\', '/', WP_CONTENT_DIR).'/ept-logs/');
 define( 'EPT_DEBUG', false);		# never use debug mode on productive systems
 // i18n plugin domain for language files
@@ -59,6 +59,7 @@ add_action( 'admin_menu', 'ept_create_menu' );
 //call register settings function
 add_action( 'admin_init', 'ept_register_settings' );
 
+
 register_activation_hook(__FILE__, 'ept_activate');
 register_deactivation_hook(__FILE__, 'ept_deactivate');
 register_uninstall_hook(__FILE__, 'ept_uninstall');
@@ -72,8 +73,6 @@ function ept_activate() {
 function ept_deactivate() {
 	// needed for proper deletion of every option
 	delete_option('ept_option_3');
-	// delete log files and folder only if needed
-	if (function_exists('ept_deleteLogFolder')) ept_deleteLogFolder();
 }
 
 // uninstalling
