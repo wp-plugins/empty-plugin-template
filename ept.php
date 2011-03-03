@@ -3,7 +3,7 @@
 Plugin Name: EPT - Empty Plugin Template
 Plugin URI: http://1manfactory.com/ept
 Description: An empty plugin template to start with, including the most basic necessary stuff
-Version: 0.1.1.1
+Version: 0.1.1.2
 Author: Juergen Schulze, 1manfactory@gmail.com
 Author URI: http://1manfactory.com
 License: GPL2
@@ -86,18 +86,39 @@ function ept_uninstall() {
 function ept_create_menu() {
 
 	// create new top-level menu
-	#add_menu_page( __('HTML Title', EMU2_I18N_DOMAIN), EPT_PUGIN_NAME, 9, basename(__FILE__), 'ept_settings_page', plugins_url('/images/icon.png', __FILE__));
-	#add_submenu_page( basename(__FILE__), __("HTML Title", EMU2_I18N_DOMAIN), __("Menu title", EMU2_I18N_DOMAIN), 9, basename(__FILE__), EPT_PLUGIN_DIRECTORY.'/ept_settings_page.php' );
-	#add_submenu_page( basename(__FILE__), __("HTML Title2", EMU2_I18N_DOMAIN), __("Menu title 2", EMU2_I18N_DOMAIN), 9, basename(__FILE__), EPT_PLUGIN_DIRECTORY.'/ept_settings_page2.php' );
+	add_menu_page( 
+	__('HTML Title', EMU2_I18N_DOMAIN),
+	__('HTML Title', EMU2_I18N_DOMAIN),
+	0,
+	EPT_PLUGIN_DIRECTORY.'/ept_settings_page.php',
+	'',
+	plugins_url('/images/icon.png', __FILE__));
 	
+	
+	add_submenu_page( 
+	EPT_PLUGIN_DIRECTORY.'/ept_settings_page.php',
+	__("HTML Title", EMU2_I18N_DOMAIN),
+	__("Menu title", EMU2_I18N_DOMAIN),
+	0,
+	EPT_PLUGIN_DIRECTORY.'/ept_settings_page.php'
+	);
+	
+	add_submenu_page( 
+	EPT_PLUGIN_DIRECTORY.'/ept_settings_page.php',
+	__("HTML Title2", EMU2_I18N_DOMAIN),
+	__("Menu title 2", EMU2_I18N_DOMAIN),
+	9,
+	EPT_PLUGIN_DIRECTORY.'/ept_settings_page2.php'
+	);
+
 	// or create options menu page
-	add_options_page(__('HTML Title', EMU2_I18N_DOMAIN), __("Menu title", EMU2_I18N_DOMAIN), 9,  EPT_PLUGIN_DIRECTORY.'/ept_settings_page.php');
+	add_options_page(__('HTML Title 3', EMU2_I18N_DOMAIN), __("Menu title 3", EMU2_I18N_DOMAIN), 9,  EPT_PLUGIN_DIRECTORY.'/ept_settings_page.php');
 
 	// or create sub menu page
 	$parent_slug="index.php";	# For Dashboard
-	$parent_slug="edit.php";	# For Posts
+	#$parent_slug="edit.php";		# For Posts
 	// more examples at http://codex.wordpress.org/Administration_Menus
-	#add_submenu_page( $parent_slug, __("HTML Title", EMU2_I18N_DOMAIN), __("Menu title", EMU2_I18N_DOMAIN), 9, EPT_PLUGIN_DIRECTORY.'/ept_settings_page.php');
+	add_submenu_page( $parent_slug, __("HTML Title 4", EMU2_I18N_DOMAIN), __("Menu title 4", EMU2_I18N_DOMAIN), 9, EPT_PLUGIN_DIRECTORY.'/ept_settings_page.php');
 }
 
 

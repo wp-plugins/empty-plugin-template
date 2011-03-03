@@ -4,7 +4,7 @@ Donate link: http://1manfactory.com/donate
 Tags: wordpress plugin, plugin, development, template, emtpy plugin template, workshop, wordpress plugin workshop
 Requires at least: 2.8
 Tested up to: 3.1
-Stable tag: "0.1.1.1"
+Stable tag: "0.1.1.2"
 
 An empty plugin template to start with, including the most basic necessary stuff. Take this as some kind of workshop.
 
@@ -71,6 +71,9 @@ Post it at the plugin page: [EPT Empty Plugin Template ](http://1manfactory.com/
 Just do a normal upgrade.
 
 == Changelog ==
+
+= 0.1.1.2 (03.03.2011) =
+* adding submenus
 
 = 0.1.1.1 (24.02.2011) =
 * small bugfix
